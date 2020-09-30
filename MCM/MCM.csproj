@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CBA8B1A-D505-4160-B071-93244001316D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MCM</RootNamespace>
+    <AssemblyName>MCM</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.5.6298.4486, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.5.6298.4486\lib\net35-client\CircularProgressBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="ProgressBar">
+      <HintPath>..\packages\ProgressBar.1.0.10\lib\ProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="ReactiveAnimation">
+      <HintPath>..\packages\ReactiveAnimation.1.0.26\lib\net45\ReactiveAnimation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Forms">
+      <HintPath>..\packages\Rx-WinForms.2.2.5\lib\net45\System.Reactive.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.5.6298.3372, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.5.6298.3372\lib\net35-client\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="accessoire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="accessoire.Designer.cs">
+      <DependentUpon>accessoire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Basecon\conn.cs" />
+    <Compile Include="Consumption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consumption.Designer.cs">
+      <DependentUpon>Consumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRRANettoyageDataSetAccesoire.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRRANettoyageDataSetAccesoire.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRRANettoyageDataSetMachine.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRRANettoyageDataSetMachine.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRRANettoyageDataSetMarque.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRRANettoyageDataSetMarque.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRRANettoyageDataSetMarque1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRRANettoyageDataSetMarque1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRRANettoyageDataSettous.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRRANettoyageDataSettous.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HRRANettoyageDataSetUsers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRRANettoyageDataSetUsers.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="importing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="importing.Designer.cs">
+      <DependentUpon>importing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Machine.Designer.cs">
+      <DependentUpon>Machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Machine0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Machine0.designer.cs">
+      <DependentUpon>Machine0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRRANettoyageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRRANettoyageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Marque.Designer.cs">
+      <DependentUpon>Marque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personal1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal1.Designer.cs">
+      <DependentUpon>Personal1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnel.designer.cs">
+      <DependentUpon>Personnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personnel0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personnel0.designer.cs">
+      <DependentUpon>Personnel0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transfer.Designer.cs">
+      <DependentUpon>Transfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wait.Designer.cs">
+      <DependentUpon>wait.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="accessoire.resx">
+      <DependentUpon>accessoire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consumption.resx">
+      <DependentUpon>Consumption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="importing.resx">
+      <DependentUpon>importing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machine.resx">
+      <DependentUpon>Machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Machine0.resx">
+      <DependentUpon>Machine0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marque.resx">
+      <DependentUpon>Marque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal1.resx">
+      <DependentUpon>Personal1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel.resx">
+      <DependentUpon>Personnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personnel0.resx">
+      <DependentUpon>Personnel0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transfer.resx">
+      <DependentUpon>Transfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wait.resx">
+      <DependentUpon>wait.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="HRRANettoyageDataSet.xsc">
+      <DependentUpon>HRRANettoyageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRRANettoyageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRRANettoyageDataSet.xss">
+      <DependentUpon>HRRANettoyageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetAccesoire.xsc">
+      <DependentUpon>HRRANettoyageDataSetAccesoire.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetAccesoire.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRRANettoyageDataSetAccesoire.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRRANettoyageDataSetAccesoire.xss">
+      <DependentUpon>HRRANettoyageDataSetAccesoire.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetMachine.xsc">
+      <DependentUpon>HRRANettoyageDataSetMachine.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetMachine.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRRANettoyageDataSetMachine.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRRANettoyageDataSetMachine.xss">
+      <DependentUpon>HRRANettoyageDataSetMachine.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetMarque.xsc">
+      <DependentUpon>HRRANettoyageDataSetMarque.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetMarque.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRRANettoyageDataSetMarque.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRRANettoyageDataSetMarque.xss">
+      <DependentUpon>HRRANettoyageDataSetMarque.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetMarque1.xsc">
+      <DependentUpon>HRRANettoyageDataSetMarque1.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetMarque1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRRANettoyageDataSetMarque1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRRANettoyageDataSetMarque1.xss">
+      <DependentUpon>HRRANettoyageDataSetMarque1.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSettous.xsc">
+      <DependentUpon>HRRANettoyageDataSettous.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSettous.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRRANettoyageDataSettous.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRRANettoyageDataSettous.xss">
+      <DependentUpon>HRRANettoyageDataSettous.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetUsers.xsc">
+      <DependentUpon>HRRANettoyageDataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="HRRANettoyageDataSetUsers.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRRANettoyageDataSetUsers.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HRRANettoyageDataSetUsers.xss">
+      <DependentUpon>HRRANettoyageDataSetUsers.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo20_srcset-large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo20_srcset-large1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo20_srcset-large5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo20_srcset-large556.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yrtitys2_srcset-large.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d21a76863ebd089e021b229ba443c4df.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1280x1024-yellow-orange-solid-color-background-1170x936.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange-T200-fabric.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shut-down-1540631_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sans titre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="readme.txt" />
+    <None Include="Resources\search-button.gif" />
+    <None Include="Resources\1494693013_icon-111-search.png" />
+    <None Include="Resources\Kit-accessoire-SP90A-SP220A1.jpg" />
+    <None Include="Resources\Kit-accessoire-SP90A-SP220A.jpg" />
+    <None Include="Resources\Nettoyeur-vapeur-industriel.png" />
+    <None Include="Resources\picto-puissance.png" />
+    <None Include="Resources\Users-icon.png" />
+    <None Include="Resources\External_Drive_Time_Machine.png" />
+    <None Include="Resources\1494692180_38_Target_Audience.png" />
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
